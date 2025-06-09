@@ -185,8 +185,9 @@ while ($data = $result->fetch_assoc()) {
         </div>
 
         <p>
-            Panelist’s Comments/Remarks: _____________________________________________________________________________________________
+            Panelist’s Comments/Remarks: <?= htmlspecialchars($data['comments']) ?>
         </p>
+
         <p>
             - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -For SHL analyst only- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         </p>

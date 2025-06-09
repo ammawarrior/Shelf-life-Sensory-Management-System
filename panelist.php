@@ -154,9 +154,10 @@ if ($request_no) {
                             <?php endif; ?>
 
                             <div class="form-group">
-                                <label>Panelist's Comments/Remarks:</label>
-                                <textarea name="comments" class="form-control uniform-input" rows="3" required></textarea>
-                            </div>
+    <label>Panelist's Comments/Remarks:</label>
+    <textarea name="comments" id="comments" class="form-control uniform-input" rows="3" maxlength="80" required oninput="updateCount()"></textarea>
+    <small id="charCount" class="form-text text-muted">80 characters remaining</small>
+</div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -277,6 +278,14 @@ document.getElementById('successOkButton').addEventListener('click', function() 
         alert('There was a problem submitting your form.');
     });
 });
+</script>
+<script>
+function updateCount() {
+    const max = 80;
+    const textarea = document.getElementById('comments');
+    const count = textarea.value.length;
+    document.getElementById('charCount').textContent = `${max - count} characters remaining`;
+}
 </script>
 
 
